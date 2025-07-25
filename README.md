@@ -1,5 +1,7 @@
 # 🎙️ ScrumBot AI - Voice-Driven Sprint Assistant 🤖
 
+# Watch Demo video by clicking on the picture
+
 [![Watch the demo](./screenshots/Dashboard.png)](https://drive.google.com/file/d/1S8WNUBdXk-2SQB6psX3_LYP44iy90vP3/view?usp=sharing)
 
 **Transform your daily stand-ups with ScrumBot AI, the intelligent sprint assistant that converts developer voice memos into actionable insights!**
@@ -182,14 +184,6 @@ Get ScrumBot AI up and running in a few simple steps:
 
 ### ⚙️ Backend Architecture  
 ![Backend](./screenshots/Backend.jpg)
-
----
-
-## 📘 Future Enhancements
-
-- 📱 Mobile version with voice recording capabilities
-- 🔐 OAuth2 authentication for enhanced security
-- 📦 Docker Compose improvements for simplified one-command deployment
 
 ---
 
