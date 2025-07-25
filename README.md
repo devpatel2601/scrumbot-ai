@@ -130,7 +130,7 @@ Get ScrumBot AI up and running in a few simple steps:
 ![Sprint Report](./screenshots/Sprint_Report.png)
 
 ### ⚙️ Backend Architecture
-![Backend](./screenshots/Backend.png)
+![Backend](./screenshots/Backend.jpg)
 
 ---
 
