@@ -1,0 +1,60 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: scrumbot_redis
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+
+  backend:
+    build:
+      context: ./scrumbot-backend
+      dockerfile: Dockerfile
+    container_name: scrumbot_backend
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./scrumbot-backend:/app
+      - ./scrumbot-backend/uploads:/app/uploads
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - JIRA_SERVER=${JIRA_SERVER}
+      - JIRA_EMAIL=${JIRA_EMAIL}
+      - JIRA_API_TOKEN=${JIRA_API_TOKEN}
+      - JIRA_PROJECT_KEY=${JIRA_PROJECT_KEY}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  rq_worker:
+    build:
+      context: ./scrumbot-backend
+      dockerfile: Dockerfile
+    container_name: scrumbot_rq_worker
+    command: rq worker --url redis://redis:6379
+    volumes:
+      - ./scrumbot-backend:/app
+    environment:
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+      - backend
+
+  frontend:
+    build:
+      context: ./scrumbot-frontend
+      dockerfile: Dockerfile
+    container_name: scrumbot_frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE=http://localhost:8000/api
+    volumes:
+      - ./scrumbot-frontend:/app
+    command: npm run dev -- --host 0.0.0.0
+
+volumes:
+  redis_data:

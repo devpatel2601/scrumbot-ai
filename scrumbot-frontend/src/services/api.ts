@@ -1,7 +1,8 @@
 // src/services/api.ts
 import axios from "axios";
 
-const API_BASE = "http://localhost:8000/api"; // Change if your backend URL differs
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000/api";
+
 
 export interface VoiceLogResponse {
     id: number;
