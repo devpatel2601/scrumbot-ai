@@ -97,11 +97,11 @@ scrumbot-ai/
 
 📸 Screenshots
 
-![Dashboard](screenshots/Dashboard.png)
-![Trends](screenshots/Trends.png)
-![Log Details](screenshots/Log Details.png)
-![Sprint Report](screenshots/Sprint Report.png)
-![Backend](screenshots/Backend.png)
+![Dashboard](./screenshots/Dashboard.png)
+![Trends](./screenshots/Trends.png)
+![Log Details](./screenshots/Log Details.png)
+![Sprint Report](./screenshots/Sprint Report.png)
+![Backend](./screenshots/Backend.png)
 
 
 📘 Future Enhancements
