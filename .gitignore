@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.env
+*.env
+instance/
+
+# FastAPI
+*.sqlite3
+.idea/
+*.log
+
+# Redis dump
+dump.rdb
+
+# Node.js (React frontend)
+node_modules/
+build/
+dist/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
